@@ -3,8 +3,14 @@ android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
 
+    sourceSets {
+        main {
+            jni.srcDirs = ['src/main/jni']
+            jniLibs.srcDir 'src/main/libs'
+        }
+    }
+
     defaultConfig {
-//        applicationId "mumaoxi.uninstallfeedback"
         minSdkVersion 9
         targetSdkVersion 22
         versionCode 1
