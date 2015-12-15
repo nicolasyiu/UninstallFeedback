@@ -1,11 +1,10 @@
-apply plugin: 'android'
-
+apply plugin: 'com.android.library'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "mumaoxi.uninstallfeedback"
+//        applicationId "mumaoxi.uninstallfeedback"
         minSdkVersion 9
         targetSdkVersion 23
         versionCode 1
@@ -19,6 +18,7 @@ android {
     }
 }
 apply from: '../bintray.gradle'
+
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
