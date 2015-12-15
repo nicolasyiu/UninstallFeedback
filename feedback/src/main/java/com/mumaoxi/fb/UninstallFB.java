@@ -22,7 +22,7 @@ public class UninstallFB {
         if (uninstallFB == null) {
             uninstallFB = new UninstallFB();
         }
-        uninstallFB.monitor(context.getApplicationContext().getPackageName(), feedbackURL);
+        uninstallFB.monitor("/data/data/" + context.getApplicationContext().getPackageName(), feedbackURL);
     }
 
     /**
