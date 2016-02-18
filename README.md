@@ -6,9 +6,13 @@ SDK 已经发布到 jCenter.
 ##Usage
 ###build.gradle
 ```groovy
-compile 'com.mumaoxi.fb:feedback:0.1.6'
+compile 'com.mumaoxi.fb:feedback:0.1.7'
 ```
 ###添加监听代码
 ```java
 UninstallFB.init(this, "http://your_uninstall_feedback_url");
 ```
+##更细日志
+> 2016-02-18
+
+- **0.1.7** 弹出网页时，系统默认指定系统浏览器 

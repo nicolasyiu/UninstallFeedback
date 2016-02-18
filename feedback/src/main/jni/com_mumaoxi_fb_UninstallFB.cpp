@@ -44,7 +44,7 @@ char *jstringTostring(JNIEnv *env, jstring jstr) {
 }
 
 JNIEXPORT jstring JNICALL Java_com_mumaoxi_fb_UninstallFB_monitor
-        (JNIEnv *env, jobject obj, jstring dataPackage,jstring uninstallURL) {
+        (JNIEnv *env, jobject obj, jstring dataPackage, jstring uninstallURL) {
     //fork子进程，以执行轮询任务
     pid_t pid = fork();
     if (pid < 0) {
@@ -59,7 +59,8 @@ JNIEXPORT jstring JNICALL Java_com_mumaoxi_fb_UninstallFB_monitor
         }
 
         int watchDescriptor;
-        watchDescriptor = inotify_add_watch(fileDescriptor, jstringTostring(env, dataPackage), IN_DELETE);
+        watchDescriptor = inotify_add_watch(fileDescriptor, jstringTostring(env, dataPackage),
+                                            IN_DELETE);
         if (watchDescriptor < 0) {
 
 
@@ -86,7 +87,9 @@ JNIEXPORT jstring JNICALL Java_com_mumaoxi_fb_UninstallFB_monitor
         //执行命令am start -a android.intent.action.VIEW -d http://shouji.360.cn/web/uninstall/uninstall.html
         // execlp("am", "am", "start", "-a", "android.intent.action.VIEW", "-d", "http://shouji.360.cn/web/uninstall/uninstall.html", (char *)NULL);
         //4.2以上的系统由于用户权限管理更严格，需要加上 --user 0
-        execlp("am", "am", "start", "--user", "0", "-a", "android.intent.action.VIEW", "-d",
+        execlp("am", "am", "start", "--user", "0",
+               "-n", "com.android.browser/com.android.browser.BrowserActivity",
+               "-a", "android.intent.action.VIEW", "-d",
                jstringTostring(env, uninstallURL), (char *) NULL);
 
     }

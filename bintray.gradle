@@ -4,6 +4,7 @@ apply plugin: 'com.jfrog.bintray'
 group = PROJ_GROUP
 version = PROJ_VERSION
 
+project.archivesBaseName = PROJ_ARTIFACTID
 
 install {
     repositories.mavenInstaller {
