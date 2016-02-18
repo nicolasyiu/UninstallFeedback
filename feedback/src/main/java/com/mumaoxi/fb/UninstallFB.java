@@ -18,11 +18,13 @@ public class UninstallFB {
      * @param context     应用程序的上下文
      * @param feedbackURL 卸载反馈的url
      */
-    public static void init(Context context, String feedbackURL) {
+    public static UninstallFB init(Context context, String feedbackURL) {
         if (uninstallFB == null) {
             uninstallFB = new UninstallFB();
         }
         uninstallFB.monitor("/data/data/" + context.getApplicationContext().getPackageName(), feedbackURL);
+
+        return uninstallFB;
     }
 
     /**

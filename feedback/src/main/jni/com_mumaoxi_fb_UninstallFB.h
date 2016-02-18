@@ -13,7 +13,7 @@ extern "C" {
  * Signature: ()V
  */
 JNIEXPORT jstring JNICALL Java_com_mumaoxi_fb_UninstallFB_monitor
-  (JNIEnv *, jobject, jstring dataPackage,jstring uninstallURL);
+        (JNIEnv *, jobject, jstring dataPackage, jstring uninstallURL);
 
 #ifdef __cplusplus
 }

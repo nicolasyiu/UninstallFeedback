@@ -1,4 +1,8 @@
-apply plugin: 'com.android.library'
+if (PROJ_LIBRARY == 'true')
+    apply plugin: 'com.android.library'
+else
+    apply plugin: 'com.android.application'
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -11,10 +15,12 @@ android {
     }
 
     defaultConfig {
+        if (PROJ_LIBRARY != 'true')
+            applicationId PROJ_GROUP
         minSdkVersion 9
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        versionCode Integer.parseInt(PROJ_VERSION_CODE)
+        versionName PROJ_VERSION
     }
     buildTypes {
         release {
@@ -23,7 +29,9 @@ android {
         }
     }
 }
-apply from: '../bintray.gradle'
+
+if (PROJ_LIBRARY == 'true')
+    apply from: '../bintray.gradle'
 
 
 dependencies {
