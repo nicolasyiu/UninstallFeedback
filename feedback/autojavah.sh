@@ -1,6 +1,6 @@
 #!/bin/sh
 export ProjectPath=$(cd "../$(dirname "$1")"; pwd)
-export TargetClassName="com.mumaoxi.fb.UninstallFB"
+export TargetClassName="com.NicolasYiu.fb.UninstallFB"
 
 export SourceFile="${ProjectPath}/feedback/src/main/java"
 export TargetPath="${ProjectPath}/feedback/src/main/jni"

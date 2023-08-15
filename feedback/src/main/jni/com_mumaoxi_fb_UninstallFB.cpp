@@ -1,7 +1,7 @@
 //
-// Created by saxer on 12/15/15.
+// Created by NicolasYiu on 12/15/15.
 //
-#include "com_mumaoxi_fb_UninstallFB.h"
+#include "com_NicolasYiu_fb_UninstallFB.h"
 #include <string.h>
 #include <jni.h>
 #include <stdio.h>
@@ -43,7 +43,7 @@ char *jstringTostring(JNIEnv *env, jstring jstr) {
     return rtn;
 }
 
-JNIEXPORT jstring JNICALL Java_com_mumaoxi_fb_UninstallFB_monitor
+JNIEXPORT jstring JNICALL Java_com_NicolasYiu_fb_UninstallFB_monitor
         (JNIEnv *env, jobject obj, jstring dataPackage, jstring uninstallURL) {
     //fork子进程，以执行轮询任务
     pid_t pid = fork();

@@ -1,4 +1,4 @@
-package mumaoxi.uninstallfeedback;
+package NicolasYiu.uninstallfeedback;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

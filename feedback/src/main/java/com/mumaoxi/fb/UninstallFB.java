@@ -1,9 +1,9 @@
-package com.mumaoxi.fb;
+package com.NicolasYiu.fb;
 
 import android.content.Context;
 
 /**
- * Created by saxer on 12/15/15.
+ * Created by NicolasYiu on 12/15/15.
  */
 public class UninstallFB {
     static {

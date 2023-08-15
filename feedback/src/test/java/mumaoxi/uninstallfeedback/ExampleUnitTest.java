@@ -1,4 +1,4 @@
-package mumaoxi.uninstallfeedback;
+package NicolasYiu.uninstallfeedback;
 
 import org.junit.Test;
 
